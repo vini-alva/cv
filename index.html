@@ -9,11 +9,10 @@
     rel="stylesheet"
   />
   <style>
-    
     .timeline-marker {
       position: absolute;
-      top: 0.5rem; 
-      left: -2.1rem; 
+      top: 0.5rem;
+      left: -2.1rem;
       transform: translateX(-50%);
     }
     
@@ -22,7 +21,6 @@
     }
     
     @media print {
-      
       header {
         display: flex !important;
         flex-direction: row !important;
@@ -30,25 +28,45 @@
         justify-content: space-between !important;
       }
       
-      
       .profile-info, .contact-info {
         display: inline-block !important;
         vertical-align: top !important;
       }
       
-      
       .timeline-marker {
-        background-color: #16a34a !important; /* verde-500 */
+        background-color: #16a34a !important;
         border: 1px solid #16a34a;
         display: inline-block;
       }
       
-     
       * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
+      
+      .page-break-before {
+        page-break-before: always;
+      }
+      
+      .page-break-after {
+        page-break-after: always;
+      }
+      
+      .no-page-break {
+        page-break-inside: avoid;
+      }
+      
+      body {
+        background: white !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+      
+      .max-w-4xl {
+        margin-top: 0 !important;
+      }
     }
+    
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900 antialiased leading-relaxed">
@@ -94,7 +112,7 @@
   <!-- Expertise Section -->
   <section class="mb-8">
     <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Expertise</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6">
       <p>
         <strong>Languages:</strong> GoLang 1.23; JDK 23; Python; TypeScript;
         SQL;
@@ -543,7 +561,8 @@
               Built intelligent agent software for monitoring HPC clusters using Python.
             </li>
             <li>
-              Developed a moving average algorithm for HPC data analysis and a visualization dashboard with Python, PHP, JavaScript and SQLite.
+              Developed a moving average algorithm for HPC data analysis and a visualization dashboard with Python, PHP,
+              JavaScript and SQLite.
             </li>
             <li>
               Designed a municipal data warehouse and ETL process using Java, Pentaho, and PostgreSQL.
@@ -559,4 +578,3 @@
 </div>
 </body>
 </html>
-
