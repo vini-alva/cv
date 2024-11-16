@@ -4,11 +4,162 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vinicius Alvarenga - Software Engineer CV</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    rel="stylesheet"
-  />
+<!--  <link-->
+<!--    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"-->
+<!--    rel="stylesheet"-->
+<!--  />-->
   <style>
+    /* style.css - Design do Currículo */
+    
+    /* Reset Básico */
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #333;
+      background-color: #ffffff;
+    }
+    
+    /* Container Principal */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 15px 20px;
+    }
+    
+    /* Header */
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #eeeeee;
+      padding: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+      }
+    }
+    
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #4caf50;
+      margin-bottom: 10px;
+    }
+    
+    header h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #222;
+    }
+    
+    header p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #666;
+    }
+    
+    header a {
+      color: #4caf50;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    header a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Seções */
+    section {
+      margin-bottom: 30px;
+    }
+    
+    section h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #444;
+      border-bottom: 2px solid #4caf50;
+      padding-bottom: 5px;
+    }
+    
+    section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    
+    section ul li {
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+    
+    /* Timeline */
+    .timeline {
+      position: relative;
+      border-left: 3px solid #4caf50;
+      padding-left: 20px;
+      margin-left: 20px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 15px;
+      height: 15px;
+      background-color: #4caf50;
+      border: 3px solid white;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .timeline-item h3 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    
+    .timeline-item span {
+      font-size: 14px;
+      color: #777;
+      display: block;
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    
+    .timeline-item ul {
+      margin-top: 5px;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      margin-top: 20px;
+    }
+    
     .timeline-marker {
       position: absolute;
       top: 0.5rem;
@@ -118,13 +269,12 @@
         SQL;
       </p>
       <p>
-        <strong>Frameworks:</strong> Spring Ecosystem (Framework; Boot; DI;
+        <strong>Frameworks:</strong> Spring (Boot; DI;
         Data; AOT; Hibernate); React (Next.js); Vue (Nuxt.js); Angular;
         Kafka Streams; tRPC; gRPC; TailWind;
       </p>
       <p>
-        <strong>Testing:</strong> Cucumber; Mockito; Spock; Automated
-        Testing; TDD; E2E Testing; Cypress;
+        <strong>Testing:</strong> Cucumber; Mockito; Spock; TDD; E2E Testing; Cypress;
       </p>
       <p>
         <strong>Methodologies:</strong> Scrum; Extreme Programming; Pair
@@ -135,7 +285,6 @@
         <strong>Build Tools:</strong> Maven; Gradle; Nexus; Composer; NPM;
         pnpm; Yarn; Makefile;
       </p>
-      <p><strong>Application Servers:</strong> Tomcat; Netty; Jetty;</p>
       <p>
         <strong>Databases & Storage:</strong> PostgreSQL 16; SQL Server;
         MongoDB; MySQL; SQLite; Elastic-Search; MariaDB; Redis; Milvus;
@@ -149,7 +298,7 @@
       <p>
         <strong>ML/AI & Data:</strong> Whisper; Prompt Engineering; LLM
         Integration; Retrieval-Augmented Generation (RAG); Ada Vectoring;
-        Assistant Engineering;
+        Assistant Engineering; NumPy; Pandas; Seaborn;
       </p>
       <p><strong>Communication:</strong> English C1; Portuguese native;</p>
     </div>
@@ -232,85 +381,6 @@
             <li>Coached developers throughout the development.</li>
             <li>Contributed to code quality through reviews.</li>
             <li>Presented periodical show & tell and demo sessions.</li>
-          </ul>
-        </div>
-        <div class="mb-8 ml-8 relative">
-          <div
-            class="timeline-marker bg-green-500 w-4 h-4 rounded-full"
-          ></div>
-          <h3 class="text-xl font-semibold">
-            <a href="http://neotube.ai" target="_blank">NeoTube.ai</a> |
-            <span class="text-gray-400 text-sm"
-            >Hands On Founder - Personal Project</span
-            >
-            <span class="text-gray-600 text-sm text-right"
-            >| Oct 2024 - Present</span
-            >
-          </h3>
-          
-          <p class="text-gray-700 text-sm">
-            React (Next.js), TypeScript, PostgreSQL, Prisma, Vercel, OpenAI
-            Ada, Milvus, Zilliz, ChatGPT, tRPC, Clerk, Python, Whisper, RAG
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Engineered the FE and BE with React NextJS, TypeScript, and
-              tRPC.
-            </li>
-            <li>Used PostgreSQL as the main DB and Prisma as ORM.</li>
-            <li>
-              Adopted Milvus vector DB and OpenAI's Ada for vector encoding.
-            </li>
-            <li>Integrated with ChatGPT to enable the Q&A assistant.</li>
-            <li>
-              Utilised Clerk for secure authentication, Vercel and Zilliz as
-              PaaS.
-            </li>
-            <li>
-              Employed Mux for video storage, distribution, and encoding.
-            </li>
-            <li>
-              Prototyped with Python, Ffmpeg, and Whisper to validate
-              project feasibility.
-            </li>
-          </ul>
-        </div>
-        <div class="mb-8 ml-8 relative">
-          <div class="timeline-marker bg-green-500 w-4 h-4 rounded-full"></div>
-          <h3 class="text-xl font-semibold">
-            <a href="http://zroutes.com" target="_blank">Zroutes.com</a> |
-            <span class="text-gray-400 text-sm">Founder & Technical Lead - Personal Project</span>
-            <span class="text-gray-600 text-sm text-right">| Jan 2024 - Present</span>
-          </h3>
-          
-          <p class="text-gray-700 text-sm">
-            Angular, Python (Django), PostgreSQL, PostGIS, CSS, Terraform,
-            AWS (S3, CloudFront), Docker, Kubernetes, Thumbor
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Led the development FE and BE of the social travel platform
-              with Angular TypeScript.
-            </li>
-            <li>
-              Utilised Redis for session management and Python Django for
-              backend services.
-            </li>
-            <li>
-              Performed business analysis, including market research,
-              regulation, and budgeting.
-            </li>
-            <li>
-              Managed recruitment, outsourcing, training, and dismissals.
-            </li>
-            <li>
-              Executed project management with Scrum, Jira, and Confluence.
-            </li>
-            <li>
-              Architected FE & BE components, APIs, integration tools, core
-              models, databases, and analysed security risks.
-            </li>
-            <li>Provided regular reports to main stakeholders.</li>
           </ul>
         </div>
         <div class="mb-8 ml-8 relative">
@@ -508,7 +578,6 @@
             </li>
           </ul>
         </div>
-        
         <div class="mb-8 ml-8 relative">
           <div
             class="timeline-marker bg-green-500 w-4 h-4 rounded-full absolute -left-6 top-1.5"
@@ -537,7 +606,6 @@
             </li>
           </ul>
         </div>
-        
         <div class="mb-8 ml-8 relative">
           <div
             class="timeline-marker bg-green-500 w-4 h-4 rounded-full absolute -left-6 top-1.5"
@@ -558,18 +626,102 @@
           </p>
           <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
             <li>
-              Built intelligent agent software for monitoring HPC clusters using Python.
-            </li>
-            <li>
-              Developed a moving average algorithm for HPC data analysis and a visualization dashboard with Python, PHP,
-              JavaScript and SQLite.
+              Built intelligent agent and dashboard software for HPC monitoring using Python.
             </li>
             <li>
               Designed a municipal data warehouse and ETL process using Java, Pentaho, and PostgreSQL.
             </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Timeline -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold border-b pb-2 mb-4">
+      Personal Projects
+    </h2>
+    <div class="relative">
+      <div class="border-l-4 border-gray-300 ml-4">
+        <!-- Experience Block -->
+        
+        <div class="mb-8 ml-8 relative">
+          <div
+            class="timeline-marker bg-green-500 w-4 h-4 rounded-full"
+          ></div>
+          <h3 class="text-xl font-semibold">
+            <a href="http://neotube.ai" target="_blank">NeoTube.ai</a> |
+            <span class="text-gray-400 text-sm"
+            >Hands On Founder - Personal Project</span
+            >
+            <span class="text-gray-600 text-sm text-right"
+            >| Oct 2024 - Present</span
+            >
+          </h3>
+          
+          <p class="text-gray-700 text-sm">
+            React (Next.js), TypeScript, PostgreSQL, Prisma, Vercel, OpenAI
+            Ada, Milvus, Zilliz, ChatGPT, tRPC, Clerk, Python, Whisper, RAG
+          </p>
+          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
             <li>
-              Implemented data analysis and reporting tools with Java and GWT for enhanced insights.
+              Engineered the FE and BE with React NextJS, TypeScript, and
+              tRPC.
             </li>
+            <li>Used PostgreSQL as the main DB and Prisma as ORM.</li>
+            <li>
+              Adopted Milvus vector DB and OpenAI's Ada for vector encoding.
+            </li>
+            <li>Integrated with ChatGPT to enable the Q&A assistant.</li>
+            <li>
+              Utilised Clerk for secure authentication, Vercel and Zilliz as
+              PaaS.
+            </li>
+            <li>
+              Employed Mux for video storage, distribution, and encoding.
+            </li>
+            <li>
+              Prototyped with Python, Ffmpeg, and Whisper to validate
+              project feasibility.
+            </li>
+          </ul>
+        </div>
+        <div class="mb-8 ml-8 relative">
+          <div class="timeline-marker bg-green-500 w-4 h-4 rounded-full"></div>
+          <h3 class="text-xl font-semibold">
+            <a href="http://zroutes.com" target="_blank">Zroutes.com</a> |
+            <span class="text-gray-400 text-sm">Founder & Technical Lead - Personal Project</span>
+            <span class="text-gray-600 text-sm text-right">| Jan 2024 - Present</span>
+          </h3>
+          <p class="text-gray-700 text-sm">
+            Angular, Python (Django), PostgreSQL, PostGIS, CSS, Terraform,
+            AWS (S3, CloudFront), Docker, Kubernetes, Thumbor
+          </p>
+          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
+            <li>
+              Led the development FE and BE of the social travel platform
+              with Angular TypeScript.
+            </li>
+            <li>
+              Utilised Redis for session management and Python Django for
+              backend services.
+            </li>
+            <li>
+              Performed business analysis, including market research,
+              regulation, and budgeting.
+            </li>
+            <li>
+              Managed recruitment, outsourcing, training, and dismissals.
+            </li>
+            <li>
+              Executed project management with Scrum, Jira, and Confluence.
+            </li>
+            <li>
+              Architected FE & BE components, APIs, integration tools, core
+              models, databases, and analysed security risks.
+            </li>
+            <li>Provided regular reports to main stakeholders.</li>
           </ul>
         </div>
       </div>
