@@ -4,14 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vinicius Alvarenga - Software Engineer CV</title>
-<!--  <link-->
-<!--    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"-->
-<!--    rel="stylesheet"-->
-<!--  />-->
   <style>
-    /* style.css - Design do Currículo */
-    
-    /* Reset Básico */
     body {
       margin: 0;
       padding: 30px;
@@ -22,15 +15,17 @@
       background-color: #ffffff;
     }
     
-    /* Container Principal */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 15px 20px;
+    h3 {
+      margin: 0;
+      background: #f3f3f3;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    
+    .techs {
+      margin: 0;
+      padding-left: 5px;
+      font-weight: 600;
     }
     
     /* Header */
@@ -39,9 +34,27 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #eeeeee;
-      padding: 20px;
+    }
+    
+    .main-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    /* Intro */
+    .intro {
+      display: flex;
+      gap: 50px;
+    }
+    
+    .expertise, .education {
+      width: 50%;
+    }
+    
+    .projects {
+      margin-top: 30px;
     }
     
     @media (max-width: 768px) {
@@ -50,51 +63,61 @@
         text-align: center;
         padding: 10px;
       }
+      
+      .main-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+      
+      .intro {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+      }
+      
+      .education, .expertise {
+        width: 100%;
+      }
     }
     
     header img {
       width: 100px;
       height: 100px;
+      flex-shrink: 0;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #4caf50;
-      margin-bottom: 10px;
     }
     
     header h1 {
       font-size: 28px;
+      margin: 0;
       font-weight: bold;
-      margin-bottom: 5px;
       color: #222;
     }
     
     header p {
-      margin: 5px 0;
-      font-size: 16px;
+      margin: 2px 0;
       color: #666;
     }
     
     header a {
       color: #4caf50;
       text-decoration: none;
-      font-weight: bold;
       margin-left: 10px;
     }
+    
     header a:hover {
       text-decoration: underline;
     }
     
-    /* Seções */
-    section {
-      margin-bottom: 30px;
-    }
+    /* Sections */
     
     section h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
       color: #444;
       border-bottom: 2px solid #4caf50;
-      padding-bottom: 5px;
     }
     
     section ul {
@@ -102,73 +125,13 @@
       padding-left: 20px;
     }
     
-    section ul li {
-      margin-bottom: 12px;
-      line-height: 1.8;
-    }
-    
-    /* Timeline */
-    .timeline {
-      position: relative;
-      border-left: 3px solid #4caf50;
-      padding-left: 20px;
-      margin-left: 20px;
-    }
-    
-    .timeline-item {
-      position: relative;
+    hr {
+      margin-top: 20px;
       margin-bottom: 20px;
     }
     
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -9px;
-      top: 0;
-      width: 15px;
-      height: 15px;
-      background-color: #4caf50;
-      border: 3px solid white;
-      border-radius: 50%;
-      z-index: 1;
-    }
-    
-    .timeline-item h3 {
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 5px;
-    }
-    
-    .timeline-item span {
-      font-size: 14px;
-      color: #777;
-      display: block;
-      margin-bottom: 10px;
-      line-height: 1.8;
-    }
-    
-    .timeline-item ul {
-      margin-top: 5px;
-    }
-    
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: #888;
-      margin-top: 20px;
-    }
-    
-    .timeline-marker {
-      position: absolute;
-      top: 0.5rem;
-      left: -2.1rem;
-      transform: translateX(-50%);
-    }
-    
     a {
-      text-decoration: underline;
+      color: #4caf50;
     }
     
     @media print {
@@ -220,506 +183,269 @@
   
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900 antialiased leading-relaxed">
-<div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg mt-10 p-8">
-  <header class="flex flex-col sm:flex-row items-center sm:justify-between border-b pb-4 mb-8 space-y-4 sm:space-y-0">
-    <!-- Profile Picture and Main Info -->
-    <div class="flex flex-col sm:flex-row items-center sm:space-x-6 text-center sm:text-left">
-      <img
-        src="https://vini-alva.github.io/cv/Vinicius.jpg"
-        alt="Profile Picture"
-        class="w-24 h-24 rounded-full shadow-lg border-2 border-gray-300"
-      />
-      <!-- Main Info -->
-      <div class="mt-4 sm:mt-0">
-        <h1 class="text-2xl sm:text-3xl font-bold">Vinicius Alvarenga</h1>
-        <p class="text-gray-600">Software Engineer Contractor</p>
-        <p class="text-gray-500">Settled Status | BPSS & DBS | Immediate Start</p>
-        <p class="text-gray-400">Gorton | Manchester | UK</p>
+<body>
+<div>
+  <header>
+    <div class="main-info">
+      <div>
+        <img
+          src="https://vini-alva.github.io/cv/Vinicius.jpg"
+          alt="Profile Picture"
+        />
+      </div>
+      <div>
+        <h1>Vinicius Alvarenga</h1>
+        <p>Software Engineer Contractor</p>
+        <p>Settled Status | BPSS & DBS | Immediate Start</p>
+        <p>Gorton | Manchester | UK</p>
       </div>
     </div>
-    <!-- Contact Information -->
-    <div class="text-center sm:text-right text-xs">
-      <p class="text-gray-600">
-        <strong>Phone:</strong>
-        <a href="tel:+447960805909" class="text-blue-500">(+44) 07960 805909</a>
+    <div>
+      <p>
+        <span>Phone:</span>
+        <a href="tel:+447960805909">(+44) 07960 805909</a>
       </p>
-      <p class="text-gray-600">
-        <strong>Email:</strong>
-        <a href="mailto:vini@codebest.io" class="text-blue-500">vini@codebest.io</a>
+      <p>
+        <span>Email:</span>
+        <a href="mailto:vini@codebest.io">vini@codebest.io</a>
       </p>
-      <p class="text-gray-600">
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/vinicius-alvarenga-profile/" class="text-blue-500" target="_blank">LinkedIn/vinicius</a>
+      <p>
+        <span>LinkedIn:</span>
+        <a href="https://www.linkedin.com/in/vinicius-alvarenga-profile/" target="_blank">LinkedIn/vinicius</a>
       </p>
-      <p class="text-gray-600">
-        <strong>Website:</strong>
-        <a href="https://codebest.io" class="text-blue-500" target="_blank">codebest.io</a>
+      <p>
+        <span>Website:</span>
+        <a href="https://codebest.io" target="_blank">codebest.io</a>
       </p>
     </div>
   </header>
-  
-  
-  <!-- Expertise Section -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Expertise</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6">
-      <p>
-        <strong>Languages:</strong> GoLang 1.23; JDK 21; Python; TypeScript;
-        SQL;
-      </p>
-      <p>
-        <strong>Frameworks:</strong> Spring (Boot; DI;
-        Data; AOT; Hibernate); React (Next.js); Vue (Nuxt.js); Angular;
-        Kafka Streams; tRPC; gRPC; TailWind;
-      </p>
-      <p>
-        <strong>Testing:</strong> Cucumber; Mockito; Spock; TDD; E2E Testing; Cypress;
-      </p>
-      <p>
-        <strong>Methodologies:</strong> Scrum; Extreme Programming; Pair
-        Programming;
-      </p>
-      <p><strong>Versioning:</strong> GIT;</p>
-      <p>
-        <strong>Build Tools:</strong> Maven; Gradle; Nexus; Composer; NPM;
-        pnpm; Yarn; Makefile;
-      </p>
-      <p>
-        <strong>Databases & Storage:</strong> PostgreSQL 16; SQL Server;
-        MongoDB; MySQL; SQLite; Elastic-Search; MariaDB; Redis; Milvus;
-      </p>
-      <p>
-        <strong>CI/CD & DevOps:</strong> Jenkins; AWS Cloudwatch; AWS KMS;
-        Docker; Terraform; Jira; Consul; EC2; ECS; AWS Lambda functions;
-        Vercel;
-      </p>
-      <p><strong>Multimedia & Authentication:</strong> Mux; Clerk;</p>
-      <p>
-        <strong>ML/AI & Data:</strong> Whisper; Prompt Engineering; LLM
-        Integration; Retrieval-Augmented Generation (RAG); Ada Vectoring;
-        Assistant Engineering; NumPy; Pandas; Seaborn;
-      </p>
-      <p><strong>Communication:</strong> English C1; Portuguese native;</p>
-    </div>
-  </section>
-  
-  <!-- Education Section -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Education</h2>
-    <ul class="list-disc pl-5 space-y-2">
-      <li>
-        <strong>MIT Data Science & Machine Learning</strong> (June 2023) –
-        Ranked 1st in class.
-      </li>
-      <li><strong>LinkedIn Spring Boot TDD</strong> (August 2024).</li>
-      <li><strong>Bet365 Go Training</strong> (August 2020).</li>
-      <li>
-        <strong>Ardan Labs Go Ultimate with Bill Kennedy</strong> (August
-        2020).
-      </li>
-      
-      <li>
-        <strong>BSc in Technology of Information and Communication</strong>
-        (May 2012) – Final score: 8.3/10.
-      </li>
-    </ul>
-  </section>
-  
+  <br>
+  <div class="intro">
+    <!-- Expertise Section -->
+    <section class="expertise">
+      <h2>Expertise</h2>
+      <div>
+        <p>
+          <strong>Languages:</strong>
+          GoLang, Java, Python, TypeScript, SQL
+        </p>
+        <p>
+          <strong>Technologies & Tools:</strong>
+          Spring Boot, Hibernate, React (Next.js), Vue (Nuxt.js), Angular, Kafka, tRPC, gRPC
+        </p>
+        <p>
+          <strong>Testing:</strong>
+          Cucumber, Mockito, Spock, TDD, Cypress, E2E Testing
+        </p>
+        <p>
+          <strong>Agile Methods:</strong> Scrum, Extreme Programming, Pair Programming
+        </p>
+        <p>
+          <strong>Build Tools:</strong> Makefile, Maven, Gradle, NPM, Yarn
+        </p>
+        <p>
+          <strong>Databases:</strong>
+          PostgreSQL, MSSQL, MongoDB, MySQL, Redis, Elastic Search, Milvus
+        </p>
+        <p>
+          <strong>CI/CD:</strong> Docker, Terraform, Jenkins, AWS (Lambda, EC2, ECS, CloudWatch, KMS), Vercel
+        </p>
+        <p>
+          <strong>ML/AI: </strong>LLM Integration, Prompt Engineering, RAG, Whisper, NumPy, Pandas, Seaborn
+        </p>
+      </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section class="education">
+      <h2>Education</h2>
+      <p><strong>MIT Data Science & Machine Learning</strong> (June 2023) – Ranked 1st in class.</p>
+      <p><strong>LinkedIn Spring Boot TDD</strong> (August 2024).</p>
+      <p><strong>Bet365 Go Training</strong> (August 2020).</p>
+      <p><strong>Ardan Labs Go Ultimate with Bill Kennedy</strong> (August 2020).</p>
+      <p><strong>BSc in Technology of Information and Communication</strong>(May 2012) – Final score: 8.3/10.</p>
+    </section>
+  </div>
   <!-- Work Experience Timeline -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold border-b pb-2 mb-4">
-      Work Experience
-    </h2>
-    <div class="relative">
-      <div class="border-l-4 border-gray-300 ml-4">
+  <section>
+    <h2>Work Experience</h2>
+    <div>
+      <div>
         <!-- Experience Block -->
-        <div class="mb-8 ml-8 relative">
-          <div
-            class="timeline-marker bg-green-500 w-4 h-4 rounded-full"
-          ></div>
-          <h3 class="text-xl font-semibold">
-            <a href="Bet365.com" target="_blank">Bet365.com</a> |
-            <span class="text-gray-400 text-sm">
-                  <a class="text-blue-500" href="Bjss.com" target="_blank">bjss.com</a>
-                  Software Consultant Contractor</span
-            >
-            <span class="text-gray-600 text-sm text-right"
-            >| Aug 2020 - Jul 2024</span
-            >
+        <div>
+          <h3><a href="Bet365.com" target="_blank">Bet365.com</a> | <span><a href="Bjss.com"
+                                                                             target="_blank">bjss.com</a> Software Consultant Contractor</span><span>  |  Aug 2020 - Jul 2024</span>
           </h3>
-          
-          <p class="text-gray-700 text-sm">
-            GoLang, Kafka, gRPC, MS SQL, PostgreSQL, Go routines, Channels
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Engineered main customer-facing and core back-office services
-              using GoLang.
-            </li>
-            <li>
-              Used Kafka and gRPC for event streaming and service
-              communication.
-            </li>
-            <li>
-              Employed Go-Routines and Channels to improve with service
-              scalability.
-            </li>
+          <p class="techs">GoLang, Kafka, gRPC, MS SQL, PostgreSQL, Go routines, Channels</p>
+          <ul>
+            <li>Engineered main customer-facing and core back-office services using GoLang.</li>
+            <li>Used Kafka and gRPC for event streaming and service communication.</li>
+            <li>Employed Go-Routines and Channels to improve with service scalability.</li>
             <li>Worked with MSSQL and PostgreSQL as database.</li>
-            <li>
-              Wrote services and feature specifications documents and Sprint
-              Items.
-            </li>
+            <li>Wrote services and feature specifications documents and Sprint Items.</li>
             <li>Implemented e2e and unit testing in GoLang.</li>
-            <li>
-              Applied profiling in GoLang to assess service performance.
-            </li>
-            <li>
-              Acted as an organic SME due to gained technical and industry
-              knowledge.
-            </li>
+            <li>Applied profiling in GoLang to assess service performance.</li>
+            <li>Acted as an organic SME due to gained technical and industry knowledge.</li>
             <li>Coached developers throughout the development.</li>
             <li>Contributed to code quality through reviews.</li>
             <li>Presented periodical show & tell and demo sessions.</li>
           </ul>
         </div>
-        <div class="mb-8 ml-8 relative">
-          <div
-            class="timeline-marker bg-green-500 w-4 h-4 rounded-full absolute -left-6 top-1.5"
-          ></div>
-          <h3 class="text-xl font-semibold">
-            DWP GOV.UK / HTP |
-            <span class="text-gray-400 text-sm">
-                  <a
-                    class="text-blue-500"
-                    href="http://streamrecruitment.com"
-                    target="_blank"
-                  >StreamRecruitment.com</a
-                  >
-                  Software Consultant Contractor
-                </span>
-            <span class="text-gray-600 text-sm text-right"
-            >| Mar 2019 - Jan 2020</span
-            >
+        <hr>
+        <div>
+          <h3> DWP GOV.UK / HTP | <span><a href="http://streamrecruitment.com"
+                                           target="_blank"> StreamRecruitment.com</a> Software Consultant Contractor</span><span> |  Mar 2019 - Jan 2020</span>
           </h3>
-          
-          <p class="text-gray-700 text-sm">
-            JDK 13, Spring Framework (Security, Boot, DI, Data, Cache),
-            Hibernate, Docker, PostgreSQL, MongoDB, AWS (KMS, SNS, SQS,
-            ECS), Cucumber, Test Containers, GIT, Jenkins, Nexus, Sonar
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Developed a Supplier QA Audit System, a rules engine, and an
-              ETL solution for healthcare suppliers and the DWP using Spring
-              Boot.
+          <p class="techs">JDK 13, Spring Framework (Security, Boot, DI, Data, Cache), Hibernate, Docker, PostgreSQL,
+            MongoDB, AWS
+            (KMS, SNS, SQS, ECS), Cucumber, Test Containers, GIT, Jenkins, Nexus, Sonar</p>
+          <ul>
+            <li>Developed a Supplier QA Audit System, a rules engine, and an ETL solution for healthcare suppliers and
+              the DWP using Spring Boot.
             </li>
-            <li>
-              Leveraged JUnit, Mockito, Hamcrest, Wiremock, and Test
-              Containers for testing.
+            <li>Leveraged JUnit, Mockito, Hamcrest, Wiremock, and Test Containers for testing.</li>
+            <li>Applied static code analysis with Google Findbugs, Apache Checkstyle, and Sonar.</li>
+            <li>Utilised MongoDB and PostgreSQL as databases and AWS services (KMS, SNS, SQS, ECS) for secure data
+              storage, messaging, and deployment.
             </li>
-            <li>
-              Applied static code analysis with Google Findbugs, Apache
-              Checkstyle, and Sonar.
+            <li>Provided development and test engineers with guidance and support.</li>
+            <li>Contributed to the architecture of main components, including payment-related systems and a KMS-based
+              encryption shared library.
             </li>
-            <li>
-              Utilised MongoDB and PostgreSQL as databases and AWS services
-              (KMS, SNS, SQS, ECS) for secure data storage, messaging, and
-              deployment.
-            </li>
-            <li>
-              Provided development and test engineers with guidance and
-              support.
-            </li>
-            <li>
-              Contributed to the architecture of main components, including
-              payment-related systems and a KMS-based encryption shared
-              library.
-            </li>
-            <li>
-              Temporarily assumed BA role to gather requirements, assess
-              stakeholder needs, and audit flow, documenting in Confluence
-              and Jira.
+            <li>Temporarily assumed BA role to gather requirements, assess stakeholder needs, and audit flow,
+              documenting in Confluence and Jira.
             </li>
           </ul>
         </div>
-        <div class="mb-8 ml-8 relative">
-          <div
-            class="timeline-marker bg-green-500 w-4 h-4 rounded-full absolute -left-6 top-1.5"
-          ></div>
-          <h3 class="text-xl font-semibold">
-            DWP GOV.UK / JSA |
-            <span class="text-gray-400 text-sm">
-                  <a
-                    class="text-blue-500"
-                    href="http://valtech.com"
-                    target="_blank"
-                  >Valtech.com</a
-                  >
-                  Software Consultant Contractor
-                </span>
-            <span class="text-gray-600 text-sm text-right"
-            >| Sep 2018 - Dec 2018</span
-            >
+        <hr>
+        
+        <div>
+          <h3>DWP GOV.UK / JSA | <span><a href="http://valtech.com" target="_blank">Valtech.com</a> Software Consultant Contractor </span><span> |  Sep 2018 - Dec 2018</span>
           </h3>
-          
-          <p class="text-gray-700 text-sm">
-            JDK 8, Spring Framework, Hibernate, Mockito, JSR303, Redis,
-            PostgreSQL 10, Spring Security, AWS KMS, Thymeleaf, Docker
+          <p class="techs">JDK 8, Spring Framework, Hibernate, Mockito, JSR303, Redis, PostgreSQL 10, Spring Security,
+            AWS KMS,
+            Thymeleaf, Docker
           </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Engineered a public data gathering system for DWP with JDK 8,
-              Spring, Hibernate, Mockito, JSR303, Redis, Thymeleaf and Docker.
+          <ul>
+            <li>Engineered a public data gathering system for DWP with JDK 8, Spring, Hibernate, Mockito, JSR303, Redis,
+              Thymeleaf and Docker.
             </li>
-            <li>
-              Developed a private agent dashboard for DWP using JDK 8, Spring,
-              Hibernate, Mockito, JSR303, Redis, Thymeleaf and Docker.
+            <li>Developed a private agent dashboard for DWP using JDK 8, Spring, Hibernate, Mockito, JSR303, Redis,
+              Thymeleaf and Docker.
             </li>
-            <li>
-              Built microservices for data persistence and internal
-              integration within DWP with JDK 8, Spring, Spring Security,
-              Hibernate, AWS KMS, Redis, PostgreSQL 10 and Docker.
+            <li>Built microservices for data persistence and internal integration within DWP with JDK 8, Spring, Spring
+              Security, Hibernate, AWS KMS, Redis, PostgreSQL 10 and Docker.
             </li>
             <li>Provided guidance to developers and testers.</li>
           </ul>
         </div>
-        <div class="mb-8 ml-8 relative">
-          <div
-            class="timeline-marker bg-green-500 w-4 h-4 rounded-full absolute -left-6 top-1.5"
-          ></div>
-          <h3 class="text-xl font-semibold">
-            <a href="http://booking.com" target="_blank"
-            >Booking.com Rides</a
-            >
-            |
-            <span class="text-gray-400 text-sm"
-            >Backend Software Engineer</span
-            >
-            <span class="text-gray-600 text-sm text-right"
-            >| Jul 2017 - Sep 2018</span
-            >
-          </h3>
-          
-          <p class="text-gray-700 text-sm">
-            JDK 8, AKKA, Scala, Spring Framework (Boot, Security, DI, Data,
-            Cache, Test), Microservices, SQL Server, MariaDB, Aurora,
-            Docker, Grafana, Hystrix, Bamboo, Nexus
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Developed a scalable MVP for ground transport, later acquired
-              by
-              <a href="http://booking.com" target="_blank" class="text-blue-500"
-              >Booking.com</a
-              >, using Spring Framework, Camel, MSSQL, and Docker.
+        <hr>
+        
+        <div>
+          <h3><a href="http://booking.com" target="_blank">Booking.com
+            Rides</a> | <span>Backend Software Engineer</span><span> |  Jul 2017 - Sep 2018</span></h3>
+          <p class="techs">JDK 8, AKKA, Scala, Spring Framework (Boot, Security, DI, Data, Cache, Test), Microservices,
+            SQL Server,
+            MariaDB, Aurora, Docker, Grafana, Hystrix, Bamboo, Nexus</p>
+          <ul>
+            <li>Developed a scalable MVP for ground transport, later acquired by<a href="http://booking.com"
+                                                                                   target="_blank">Booking.com</a>,
+              using Spring Framework, Camel, MSSQL, and Docker.
             </li>
-            <li>
-              Built a new payment API with Spring Framework and Hibernate.
-            </li>
-            <li>
-              Engineered migration of a core monolith to microservices,
-              utilising Spring and Gradle.
-            </li>
-            <li>
-              Contributed to deployment pipeline using AWS services and
-              Bamboo.
-            </li>
-            <li>
-              Addressed performance issues using refactoring, Grafana, and
-              Hystrix.
-            </li>
+            <li>Built a new payment API with Spring Framework and Hibernate.</li>
+            <li>Engineered migration of a core monolith to microservices,utilising Spring and Gradle.</li>
+            <li>Contributed to deployment pipeline using AWS services and Bamboo.</li>
+            <li>Addressed performance issues using refactoring, Grafana, and Hystrix.</li>
             <li>Coached junior developers and testers.</li>
           </ul>
         </div>
-        <div class="mb-8 ml-8 relative">
-          <div
-            class="timeline-marker bg-green-500 w-4 h-4 rounded-full absolute -left-6 top-1.5"
-          ></div>
-          <h3 class="text-xl font-semibold">
-            <a href="http://impresa.pt" target="_blank">Impresa.pt</a> |
-            <span class="text-gray-400 text-sm"
-            >Backend Software Engineer</span
-            >
-            <span class="text-gray-600 text-sm text-right"
-            >| Nov 2013 - Sep 2017</span
-            >
+        <hr>
+        
+        <div>
+          <h3><a href="http://impresa.pt" target="_blank">Impresa.pt</a> | <span>Backend Software Engineer</span><span> |  Nov 2013 - Sep 2017</span>
           </h3>
-          
-          <p class="text-gray-700 text-sm">
-            Java, PHP, JavaScript, REST, SOAP, RPC, Microservices, SSO, SIC
-            Notícias websites, Database and file system migration
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Built REST, SOAP, and gRPC APIs across all layers of the core
-              platform using Java and PHP.
+          <p class="techs">Java, PHP, JavaScript, REST, SOAP, RPC, Microservices, SSO, SIC Notícias websites, Database
+            and file system
+            migration</p>
+          <ul>
+            <li>Built REST, SOAP, and gRPC APIs across all layers of the core platform using Java and PHP.</li>
+            <li>Contributed to the development of multiple news websites, including Expresso and SIC Notícias, using PHP
+              and Java.
             </li>
-            <li>
-              Contributed to the development of multiple news websites,
-              including Expresso and SIC Notícias, using PHP and Java.
-            </li>
-            <li>
-              Engineered a secure payment gateway in Java for transaction
-              processing.
-            </li>
-            <li>
-              Developed a news outlet storefront with PHP and Java to sell newspaper subscriptions.
-            </li>
-            <li>
-              Created a dynamic newsletter rendering platform using PHP and JavaScript.
-            </li>
-            <li>
-              Built a SSO system with Java and JavaScript.
-            </li>
+            <li>Engineered a secure payment gateway in Java for transaction processing.</li>
+            <li>Developed a news outlet storefront with PHP and Java to sell newspaper subscriptions.</li>
+            <li>Created a dynamic newsletter rendering platform using PHP and JavaScript.</li>
+            <li>Built a SSO system with Java and JavaScript.</li>
             <li>Migrated from legacy CMS to a bespoke system.</li>
-            <li>
-              Contributed to the development of a bespoke CMS in Java.
-            </li>
+            <li>Contributed to the development of a bespoke CMS in Java.</li>
           </ul>
         </div>
-        <div class="mb-8 ml-8 relative">
-          <div
-            class="timeline-marker bg-green-500 w-4 h-4 rounded-full absolute -left-6 top-1.5"
-          ></div>
-          <h3 class="text-xl font-semibold">
-            <a href="http://affinity.pt" target="_blank">Affinity.pt</a> |
-            <span class="text-gray-400 text-sm"
-            >Backend Software Engineer</span
-            >
-            <span class="text-gray-600 text-sm text-right"
-            >| May 2013 - Nov 2013</span
-            >
+        <hr>
+        
+        <div>
+          <h3><a href="http://affinity.pt" target="_blank">Affinity.pt</a> |
+            <span>Backend Software Engineer</span><span> |  May 2013 - Nov 2013</span>
           </h3>
-          
-          <p class="text-gray-700  text-sm">
-            Java, JavaScript, Web Services, E-commerce Architecture
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Contributed to the architecture and development of an
-              e-commerce platform using Java and JavaScript.
+          <p class="techs">Java, JavaScript, Web Services, E-commerce Architecture</p>
+          <ul>
+            <li>Contributed to the architecture and development of an e-commerce platform using Java and JavaScript.
             </li>
-            <li>
-              Built both FE and BE components and integrated with external
-              systems.
-            </li>
+            <li>Built both FE and BE components and integrated with external systems.</li>
           </ul>
         </div>
-        <div class="mb-8 ml-8 relative">
-          <div
-            class="timeline-marker bg-green-500 w-4 h-4 rounded-full absolute -left-6 top-1.5"
-          ></div>
-          <h3 class="text-xl font-semibold">
-            <a href="http://lncc.br" target="_blank">LNCC.br</a> |
-            <span class="text-gray-400 text-sm"
-            >Intelligent Systems Developer / Business Intelligence</span
-            >
-            <span class="text-gray-600 text-sm text-right"
-            >| Jan 2010 - Jan 2013</span
-            >
+        <hr>
+        
+        <div>
+          <h3><a href="http://lncc.br" target="_blank">LNCC.br</a> | <span>Intelligent Systems Developer / Business Intelligence</span><span> |  Jan 2010 - Jan 2013</span>
           </h3>
-          
-          <p class="text-gray-700 text-sm">
-            Python, PHP, JavaScript, SQLite, Java, Pentaho, PostgreSQL, GWT,
-            HPC Monitoring, ETL, Data Visualization
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Built intelligent agent and dashboard software for HPC monitoring using Python.
-            </li>
-            <li>
-              Designed a municipal data warehouse and ETL process using Java, Pentaho, and PostgreSQL.
-            </li>
+          <p class="techs">Python, PHP, JavaScript, SQLite, Java, Pentaho, PostgreSQL, GWT, HPC Monitoring, ETL, Data
+            Visualization</p>
+          <ul>
+            <li>Built intelligent agent and dashboard software for HPC monitoring using Python.</li>
+            <li>Designed a municipal data warehouse and ETL process using Java, Pentaho, and PostgreSQL.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
-  
   <!-- Projects Timeline -->
-  <section class="mb-8">
-    <h2 class="text-2xl font-semibold border-b pb-2 mb-4">
-      Personal Projects
-    </h2>
-    <div class="relative">
-      <div class="border-l-4 border-gray-300 ml-4">
+  <section class="projects">
+    <h2>Personal Projects</h2>
+    <div>
+      <div>
         <!-- Experience Block -->
-        
-        <div class="mb-8 ml-8 relative">
-          <div
-            class="timeline-marker bg-green-500 w-4 h-4 rounded-full"
-          ></div>
-          <h3 class="text-xl font-semibold">
-            <a href="http://neotube.ai" target="_blank">NeoTube.ai</a> |
-            <span class="text-gray-400 text-sm"
-            >Hands On Founder - Personal Project</span
-            >
-            <span class="text-gray-600 text-sm text-right"
-            >| Oct 2024 - Present</span
-            >
-          </h3>
-          
-          <p class="text-gray-700 text-sm">
-            React (Next.js), TypeScript, PostgreSQL, Prisma, Vercel, OpenAI
-            Ada, Milvus, Zilliz, ChatGPT, tRPC, Clerk, Python, Whisper, RAG
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Engineered the FE and BE with React NextJS, TypeScript, and
-              tRPC.
-            </li>
+        <div>
+          <h3><a href="http://neotube.ai" target="_blank">NeoTube.ai</a> |
+            <span>Hands On Founder - Personal Project</span><span> |  Oct 2024 - Present</span></h3>
+          <p class="techs">React (Next.js), TypeScript, PostgreSQL, Prisma, Vercel, OpenAI Ada, Milvus, Zilliz, ChatGPT,
+            tRPC, Clerk,
+            Python, Whisper, RAG</p>
+          <ul>
+            <li>Engineered the FE and BE with React NextJS, TypeScript, and tRPC.</li>
             <li>Used PostgreSQL as the main DB and Prisma as ORM.</li>
-            <li>
-              Adopted Milvus vector DB and OpenAI's Ada for vector encoding.
-            </li>
+            <li>Adopted Milvus vector DB and OpenAI's Ada for vector encoding.</li>
             <li>Integrated with ChatGPT to enable the Q&A assistant.</li>
-            <li>
-              Utilised Clerk for secure authentication, Vercel and Zilliz as
-              PaaS.
-            </li>
-            <li>
-              Employed Mux for video storage, distribution, and encoding.
-            </li>
-            <li>
-              Prototyped with Python, Ffmpeg, and Whisper to validate
-              project feasibility.
-            </li>
+            <li>Utilised Clerk for secure authentication, Vercel and Zilliz as PaaS.</li>
+            <li>Employed Mux for video storage, distribution, and encoding.</li>
+            <li>Prototyped with Python, Ffmpeg, and Whisper to validate project feasibility.</li>
           </ul>
         </div>
-        <div class="mb-8 ml-8 relative">
-          <div class="timeline-marker bg-green-500 w-4 h-4 rounded-full"></div>
-          <h3 class="text-xl font-semibold">
-            <a href="http://zroutes.com" target="_blank">Zroutes.com</a> |
-            <span class="text-gray-400 text-sm">Founder & Technical Lead - Personal Project</span>
-            <span class="text-gray-600 text-sm text-right">| Jan 2024 - Present</span>
+        <hr>
+        <div>
+          <h3><a href="http://zroutes.com" target="_blank">Zroutes.com</a> |
+            <span>Hands On Founder - Personal Project</span><span> |  Jan 2024 - Present</span>
           </h3>
-          <p class="text-gray-700 text-sm">
-            Angular, Python (Django), PostgreSQL, PostGIS, CSS, Terraform,
-            AWS (S3, CloudFront), Docker, Kubernetes, Thumbor
-          </p>
-          <ul class="list-disc ml-10 mt-2 text-gray-600 space-y-1">
-            <li>
-              Led the development FE and BE of the social travel platform
-              with Angular TypeScript.
-            </li>
-            <li>
-              Utilised Redis for session management and Python Django for
-              backend services.
-            </li>
-            <li>
-              Performed business analysis, including market research,
-              regulation, and budgeting.
-            </li>
-            <li>
-              Managed recruitment, outsourcing, training, and dismissals.
-            </li>
-            <li>
-              Executed project management with Scrum, Jira, and Confluence.
-            </li>
-            <li>
-              Architected FE & BE components, APIs, integration tools, core
-              models, databases, and analysed security risks.
+          <p class="techs">Angular, Python (Django), PostgreSQL, PostGIS, CSS, Terraform, AWS (S3, CloudFront), Docker,
+            Kubernetes,
+            Thumbor</p>
+          <ul>
+            <li>Led the development FE and BE of the social travel platform with Angular TypeScript.</li>
+            <li>Utilised Redis for session management and Python Django for backend services.</li>
+            <li>Performed business analysis, including market research, regulation, and budgeting.</li>
+            <li>Managed recruitment, outsourcing, training, and dismissals.</li>
+            <li>Executed project management with Scrum, Jira, and Confluence.</li>
+            <li>Architected FE & BE components, APIs, integration tools, core models, databases, and analysed security
+              risks.
             </li>
             <li>Provided regular reports to main stakeholders.</li>
           </ul>
